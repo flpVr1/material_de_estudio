@@ -6,10 +6,16 @@
 # Importación del módulo random
 import random
 
-numero_usuario = int(input('Adivina el número entre el 1 y 100: '))
-numero_aleatorio = random.randint(0, 100)
+numero_aleatorio = random.randint(1, 50)
 
-if numero_usuario == numero_aleatorio:
-    print('Felicidades, le haz atinado!')
-else:
-    print(f'Lo siento, no adivinaste!. El número aleatorio era: {numero_aleatorio}')
+# Mejora del código sin que se rompa apenas se pone un número y se mantenga el número aleatorio original sin que se reinicie solo
+while True:
+    numero_usuario = int(input('Intenta adivinar el número entre 1 y 50: '))
+
+    if numero_usuario > numero_aleatorio:
+        print('Lo siento, el número ingresado es muy alto. Intenta nuevamente')
+    elif numero_usuario < numero_aleatorio:
+        print('Lo siento, el número ingresado es muy bajo. Intenta nuevamente')
+    else:
+        print(f'Perfecto! Haz adivinado el número aleatorio {numero_aleatorio}')
+        break

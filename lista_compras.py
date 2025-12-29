@@ -33,6 +33,14 @@ while True:
             print('Lista de productos: ')
             for i, producto in enumerate(mi_lista, 1):
                 print(f'{i}, {producto}')
+            eliminar = int(input('Que producto deseas eliminar? (Ingresa el número): ')) - 1
+            if eliminar >= 0 and eliminar < len(mi_lista):
+                producto_eliminado = mi_lista.pop(eliminar)
+                print(f'Producto {producto_eliminado} eliminado de la lista.')
+            else:
+                print('Número inválido')
+        else:
+            print('La lista está vacía.')
     elif opcion == '3':
         if mi_lista:
             print(f'Lista de productos:')

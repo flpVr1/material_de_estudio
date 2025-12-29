@@ -44,7 +44,7 @@ while True:
         except ZeroDivisionError:
             print('No se puede divir por 0. Intenta nuevamente.')
         else:
-            print(f'El resultado de la división entre los números {numero1} y {numero2} es:{resultado}')
+            print(f'El resultado de la división entre los números {numero1} y {numero2} es: {resultado}')
     elif seleccion_usuario == '5':
         print('Hasta luego!')
         break

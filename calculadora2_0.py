@@ -55,6 +55,12 @@ def main():
             print('Hasta luego!')
             break
 
+        if seleccion_usuario > '5':
+            print('Por favor ingresa un valor entre 1 y 5 para usar la calculadora.')
+            continue
+        elif seleccion_usuario < '1':
+            print('Por favor ingresa un valor entre 1 y 5 para usar la calculadora.')
+
         # Recepción de los números ingresados por el usuario en la función: def obtener_numeros():
         numero1, numero2 = obtener_numeros()
         # En caso de que el usuario no ingrese nada y de a enter

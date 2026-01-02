@@ -17,6 +17,19 @@ def obtener_numeros():
         print('Ingresa valores válidos por favor')
         return None, None
     
+# Función para una menú más claro y más mantenible
+def obtener_opcion_menu():
+    # Obtener y validar la opción del menú
+    while True:
+        try:
+            opcion = int(input('Ingresa la opción que deseas hacer: '))
+            if 1 <= opcion <= 5:
+                return opcion
+            else:
+                print('Por favor ingresa un valor entre 1 y 5.')
+        except ValueError:
+            print('Debes ingresar números. No letras. Intenga nuevamente.')
+    
 # Funciones para las funciones aritméticas
 #
 # Sumar
@@ -47,19 +60,14 @@ def main():
         print('3. Multiplicar')
         print('4. Dividir')
         print('5. Salir')
-        seleccion_usuario = input('Ingresa la opción que deseas hacer: ')
+        seleccion_usuario = obtener_opcion_menu()
         print('=' * 30)
 
         # Si el usuario selecciona la acción 5 se cierra el bucle
-        if seleccion_usuario == '5':
+        if seleccion_usuario == 5:
             print('Hasta luego!')
             break
 
-        if seleccion_usuario > '5':
-            print('Por favor ingresa un valor entre 1 y 5 para usar la calculadora.')
-            continue
-        elif seleccion_usuario < '1':
-            print('Por favor ingresa un valor entre 1 y 5 para usar la calculadora.')
 
         # Recepción de los números ingresados por el usuario en la función: def obtener_numeros():
         numero1, numero2 = obtener_numeros()
@@ -70,10 +78,10 @@ def main():
 
         # Conversión del menú de selección en un diccionario con llaves llamando a sus respectivas funciones aritméticas
         operaciones = {
-            '1': sumar,
-            '2': restar,
-            '3': multiplicar,
-            '4': dividir
+            1: sumar,
+            2: restar,
+            3: multiplicar,
+            4: dividir
         }
 
         # Inicialización de las operaciones
